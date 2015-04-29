@@ -14,12 +14,12 @@ class DetailViewController: UIViewController {
     @IBOutlet var heroImageView: UIImageView!
     
     var heroName = ""
-    var heroImage = ""
+    var heroImage = UIImage(named: "placeholder")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         heroTitle.text = heroName
-        heroImageView.image = UIImage(named: heroImage)
+        heroImageView.image = heroImage
     }
 
     override func didReceiveMemoryWarning() {
