@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="G1i-5D-pSS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EjemploTabla" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,122 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="254" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="J7r-rE-ztd">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="254" id="LNT-TJ-NdR" customClass="HeroTableViewCell" customModule="EjemploTabla" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LNT-TJ-NdR" id="R6z-pn-0Ai">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spider-Man_07.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="s7n-WZ-ubA">
+                                                    <rect key="frame" x="0.0" y="-8" width="600" height="254"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="s7n-WZ-ubA" firstAttribute="leading" secondItem="R6z-pn-0Ai" secondAttribute="leading" id="39X-5H-rby"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="s7n-WZ-ubA" secondAttribute="bottom" constant="-0.5" id="6w6-XN-ggY"/>
+                                                <constraint firstAttribute="trailing" secondItem="s7n-WZ-ubA" secondAttribute="trailing" id="Gl5-nk-tKT"/>
+                                                <constraint firstItem="s7n-WZ-ubA" firstAttribute="top" secondItem="R6z-pn-0Ai" secondAttribute="topMargin" constant="-16" id="MQ3-UC-Fif"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="heroImage" destination="s7n-WZ-ubA" id="S5u-UX-pPN"/>
+                                            <segue destination="Coq-IC-50K" kind="show" id="cMT-nU-LHr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="pRw-nw-xPq"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="KCA-8i-PAc"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J7r-rE-ztd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KdW-2g-MhI"/>
+                            <constraint firstAttribute="trailing" secondItem="J7r-rE-ztd" secondAttribute="trailing" id="L1e-sD-BiL"/>
+                            <constraint firstItem="J7r-rE-ztd" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="fF8-gN-NZR"/>
+                            <constraint firstItem="J7r-rE-ztd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mww-02-5dQ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Va1-Su-3sV"/>
+                    <connections>
+                        <outlet property="tableView" destination="J7r-rE-ztd" id="81m-jD-bqY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1149" y="322"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="tQ1-sk-55K">
+            <objects>
+                <viewController id="Coq-IC-50K" customClass="DetailViewController" customModule="EjemploTabla" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mzi-8r-npe"/>
+                        <viewControllerLayoutGuide type="bottom" id="LAs-Km-2Le"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hsu-bf-8lF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PkK-tx-L9w">
+                                <rect key="frame" x="121" y="161" width="358" height="277"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="358" id="3Vs-cA-AYp"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hero" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CM-c5-iU6">
+                                <rect key="frame" x="282" y="102" width="37" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="dYG-aa-INe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LAs-Km-2Le" firstAttribute="top" secondItem="PkK-tx-L9w" secondAttribute="bottom" constant="162" id="Ab6-Mi-nLW"/>
+                            <constraint firstItem="1CM-c5-iU6" firstAttribute="top" secondItem="mzi-8r-npe" secondAttribute="bottom" constant="38" id="Zep-oD-d9P"/>
+                            <constraint firstItem="PkK-tx-L9w" firstAttribute="centerX" secondItem="1CM-c5-iU6" secondAttribute="centerX" id="ixm-TC-667"/>
+                            <constraint firstItem="PkK-tx-L9w" firstAttribute="top" secondItem="1CM-c5-iU6" secondAttribute="bottom" constant="38" id="vVK-TG-txX"/>
+                            <constraint firstItem="1CM-c5-iU6" firstAttribute="centerX" secondItem="Hsu-bf-8lF" secondAttribute="centerX" id="zum-F2-qsq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="heroImageView" destination="PkK-tx-L9w" id="wNU-cJ-WiI"/>
+                        <outlet property="heroTitle" destination="1CM-c5-iU6" id="uBf-6l-6LF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tmh-PK-mQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1821" y="312"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="r5H-rP-Vfb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G1i-5D-pSS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="31Q-b2-veB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rWu-RH-HR1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n2h-KA-rvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="337" y="322"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Spider-Man_07.jpg" width="1000" height="1000"/>
+    </resources>
 </document>
